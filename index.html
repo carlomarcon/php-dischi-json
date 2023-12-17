@@ -14,7 +14,11 @@
     <div id="app">
       <div class="wrapper">
         <div class="container">
-          <div class="card" v-for="item in objArray">
+          <div
+            class="card"
+            v-for="(item,index) in objArray"
+            @click="getDisk(index)"
+          >
             <img :src="item.poster" alt="" />
             <h2>{{item.title}}</h2>
             <span>{{item.author}}</span>

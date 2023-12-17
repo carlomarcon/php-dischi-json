@@ -2,9 +2,17 @@
 $jsson=file_get_contents('todos.json');
 // var_dump($jsson);
 $jsonArray=json_decode($jsson,true);
+
+if (isset($_GET['index'])) {
+    $selected_disk=$jsonArray[$_GET['index']];
+    $json=json_encode($selected_disk);
+}
+else {
+    $json=json_encode($jsonArray);
+}
 // var_dump($jsonArray);
 
-$json=json_encode($jsonArray);
+
 
 // var_dump($json);
 

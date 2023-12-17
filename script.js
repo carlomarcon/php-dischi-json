@@ -4,6 +4,7 @@ const app = createApp({
   data() {
     return {
       objArray: [],
+      diskGet: null,
     };
   },
   created() {
@@ -12,5 +13,19 @@ const app = createApp({
       this.objArray = resp.data;
       console.log(this.objArray);
     });
+  },
+  methods: {
+    getDisk(num) {
+      axios
+        .get("server.php", {
+          params: {
+            index: num,
+          },
+        })
+        .then((resp) => {
+          this.diskGet = resp.data;
+          console.log(this.diskGet);
+        });
+    },
   },
 }).mount("#app");
