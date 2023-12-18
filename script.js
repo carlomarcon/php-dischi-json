@@ -27,5 +27,8 @@ const app = createApp({
           console.log(this.diskGet);
         });
     },
+    rechange() {
+      this.diskGet = null;
+    },
   },
 }).mount("#app");

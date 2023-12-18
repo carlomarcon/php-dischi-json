@@ -26,6 +26,13 @@
           </div>
         </div>
       </div>
+      <div class="card2" v-if="diskGet!=null">
+        <img :src="diskGet.poster" alt="" />
+        <h2>{{diskGet.title}}</h2>
+        <span>{{diskGet.author}}</span>
+        <h2>{{diskGet.year}}</h2>
+        <span @click="rechange">X</span>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
